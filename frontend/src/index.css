@@ -1,0 +1,265 @@
+/* STREAMING_CHUNK:Importing Retro Fonts and Base CSS variables... */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+:root {
+  --bg-color: #f3e8df;
+  --panel-bg: #fdfaf7;
+  --accent-yellow: #f4d06f;
+  --accent-orange: #e2a85e;
+  --header-blue: #2b4c7e;
+  --border-dark: #121212;
+  --grid-line: rgba(18, 18, 18, 0.07);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 20px 20px;
+  font-family: "VT323", monospace;
+  color: #121212;
+  font-size: 20px;
+  line-height: 1.3;
+  user-select: none;
+}
+
+/* STREAMING_CHUNK:Styling Retro Window Frame & Header Bar... */
+.pixel-window {
+  border: 3px solid var(--border-dark);
+  background: var(--panel-bg);
+  box-shadow: 6px 6px 0px var(--border-dark);
+  border-radius: 2px;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.pixel-header {
+  background: var(--header-blue);
+  color: #ffffff;
+  padding: 8px 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--border-dark);
+  letter-spacing: 1px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+}
+
+.pixel-win-btn {
+  width: 20px;
+  height: 20px;
+  background: var(--accent-yellow);
+  border: 2px solid var(--border-dark);
+  box-shadow: 1px 1px 0px var(--border-dark);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #121212;
+}
+
+.pixel-win-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 0px 0px 0px var(--border-dark);
+}
+
+.pixel-win-btn.close {
+  background: #e76f51;
+  color: #ffffff;
+}
+
+/* STREAMING_CHUNK:Styling Chunky Inputs & Dropdowns... */
+.pixel-select,
+.pixel-input {
+  border: 3px solid var(--border-dark);
+  background: #f3edd9;
+  font-family: "VT323", monospace;
+  font-size: 22px;
+  padding: 4px 10px;
+  outline: none;
+  box-shadow: 3px 3px 0px var(--border-dark);
+  cursor: pointer;
+}
+
+.pixel-select:focus,
+.pixel-input:focus {
+  background: #ffffff;
+  border-color: #000;
+}
+
+/* STREAMING_CHUNK:Styling 3D Action Buttons... */
+.pixel-btn {
+  background: var(--accent-orange);
+  border: 3px solid var(--border-dark);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  padding: 10px 24px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 13px;
+  cursor: pointer;
+  color: #121212;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  transition: all 0.05s;
+}
+
+.pixel-btn:hover {
+  background: #f4b860;
+}
+
+.pixel-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0px var(--border-dark);
+}
+
+.pixel-btn-secondary {
+  background: #d8c3a5;
+  font-size: 11px;
+  padding: 6px 14px;
+}
+
+/* STREAMING_CHUNK:Styling Terminal Code Editor Box... */
+.code-editor-box {
+  border: 3px solid var(--border-dark);
+  background: #282c34;
+  color: #abb2bf;
+  box-shadow: 4px 4px 0px var(--border-dark);
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  display: flex;
+}
+
+.editor-line-numbers {
+  background: #21252b;
+  color: #5c6370;
+  padding: 10px 8px;
+  border-right: 2px solid #181a1f;
+  text-align: right;
+  user-select: none;
+}
+
+.pixel-textarea {
+  background: transparent;
+  color: #61afef;
+  outline: none;
+  resize: vertical;
+  font-family: "VT323", monospace;
+  font-size: 21px;
+  line-height: 1.35;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  caret-color: #e5c07b;
+}
+
+/* STREAMING_CHUNK:Styling Markdown Tables and Callout Reports... */
+.markdown-body {
+  font-family: "VT323", monospace;
+  font-size: 22px;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3 {
+  font-family: "Press Start 2P", monospace;
+  color: #121212;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  border-bottom: 2px dashed var(--border-dark);
+  padding-bottom: 4px;
+}
+
+.markdown-body h1 {
+  font-size: 16px;
+}
+.markdown-body h2 {
+  font-size: 14px;
+}
+.markdown-body h3 {
+  font-size: 12px;
+}
+
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  border: 3px solid var(--border-dark);
+  background: #f3edd9;
+  box-shadow: 4px 4px 0px var(--border-dark);
+}
+
+.markdown-body th {
+  background: #2b4c7e;
+  color: #ffffff;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  padding: 8px 10px;
+  border: 2px solid var(--border-dark);
+  text-align: left;
+}
+
+.markdown-body td {
+  border: 2px solid var(--border-dark);
+  padding: 8px 12px;
+  background: #fdfaf7;
+}
+
+.markdown-body tr:nth-child(even) td {
+  background: #f4eee1;
+}
+
+.markdown-body code {
+  background: #282c34;
+  color: #e06c75;
+  padding: 2px 6px;
+  border: 1px solid var(--border-dark);
+  font-family: "VT323", monospace;
+  font-size: 20px;
+}
+
+.markdown-body pre {
+  background: #282c34;
+  color: #98c379;
+  padding: 12px;
+  border: 3px solid var(--border-dark);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  overflow-x: auto;
+  margin: 15px 0;
+}
+
+/* STREAMING_CHUNK:Styling Retro Floating Sticker Badges... */
+.retro-sticker {
+  background: #ffffff;
+  border: 3px solid var(--border-dark);
+  box-shadow: 4px 4px 0px var(--border-dark);
+  padding: 4px 10px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* STREAMING_CHUNK:Custom Retro Scrollbars... */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+::-webkit-scrollbar-track {
+  background: #f3edd9;
+  border-left: 2px solid var(--border-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #d8c3a5;
+  border: 2px solid var(--border-dark);
+  box-shadow: inset -1px -1px 0px #121212;
+}
