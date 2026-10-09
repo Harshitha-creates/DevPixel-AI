@@ -49,11 +49,14 @@ function App() {
     setOutput("");
 
     try {
-      const res = await fetch("http://localhost:5000/api/analyze-code", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code, task, language }),
-      });
+      const res = await fetch(
+        "https://devpixel-ai-backend.onrender.com/api/analyze-code",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ code, task, language }),
+        },
+      );
 
       if (res.ok) {
         const data = await res.json();
